@@ -33,3 +33,23 @@ public :
 	void cetakpasien();
 
 };
+
+void pasien::tambahDokter(dokter* pDokter) {
+	daftar_dokter.push_back(pDokter);
+}
+void pasien::cetakDokter() {
+	cout << "Daftar dokter yang menangani pasien \"" << this->nama << "\":\n";
+	for (auto& a : daftar_dokter) {
+		cout << a->nama << "\n";
+	}
+	cout << endl;
+}
+void dokter::tambahpasien(pasien* pPasien) {
+	daftar_pasien.push_back(pPasien);
+}
+void dokter::cetakpasien() {
+	cout << "Daftar pasien dari dokter \"" << this->nama << "\":\n";
+	for (auto& a : daftar_pasien) {
+		cout << a->nama << "\n";
+	}
+}
